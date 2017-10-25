@@ -1,0 +1,9 @@
+# Log files
+*.out
+
+# Editor files
+.vscode/
+.idea/
+
+# Vim swap files
+*.swp

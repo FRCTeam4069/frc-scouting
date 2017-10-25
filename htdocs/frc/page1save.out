@@ -1,3 +1,0 @@
-Opening database connection...
-tnum=,throw=false,climb=false,color=red,notes=,abilities=0
-sql=insert into teaminfo (teamnumber,notes,color,abilities) values ('','','red',0)
