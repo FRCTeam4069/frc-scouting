@@ -1,4 +1,4 @@
-function sendpage1data() {
+function save_log_data() {
   var teamnum = $('#teamnum').val();
   var canthrow = $('#canthrow').is(':checked');
   var canclimb = $('#canclimb').is(':checked');
@@ -7,7 +7,7 @@ function sendpage1data() {
 
   var request = $.ajax(
     {
-      url: "page1save.php",
+      url: "new_log_save.php",
       type: "post",
       data:
       {
@@ -22,15 +22,15 @@ function sendpage1data() {
         alert("Error: " + errorThrown);
       },
       success: function (data) {
-        console.log(data)
         if (data.error) {
           alert(data.error);
           return;
         }
         var pj = $.parseJSON(data);
-        var whatarepoodles = pj.poodles;
-        var succsess = pj.success;
-        alert("Poodles: " + whatarepoodles);
+        var success = pj.success;
+        if (success == true) {
+          alert("Log recorded.");
+        }
 
         var boo = 1;
       }

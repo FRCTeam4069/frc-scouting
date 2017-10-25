@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-  $fp=fopen("page1save.out","wb");
+  $fp=fopen("log.out","wb");
   fwrite($fp,"Opening database connection...\n");
   $con = mysqli_connect("localhost","root","","frc4069");
   if (!$con)
@@ -31,7 +31,7 @@ $sql="insert into teaminfo (teamnumber,notes,color,abilities) values ('".$tnum."
 fwrite($fp,"sql=".$sql."\n");
 $result = $con->query($sql);
 
-echo '{"success":"true","poodles":"arefurry"}';
+echo '{"success": true}';
 fclose($fp);
-mysqli_close($con);//Close the DB Connection
+mysqli_close($con); // Close the DB Connection
 ?>
