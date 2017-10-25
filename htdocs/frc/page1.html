@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="frc_routines.js"></script>
+
+  <link rel="stylesheet" href="frc.css">
+
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="#home">Home</a>
+    <a href="page2.html">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <table border=1>
+    <tr>
+      <td>
+        <center>
+          <h3>
+            <b> Enter New Team </b>
+            </h2>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td> Team Number </td>
+      <td>
+        <input type="text" id="teamnum">
+      </td>
+    </tr>
+    <tr>
+      <td> Can Throw:</td>
+      <td>
+        <input type="checkbox" id="canthrow">
+        <tr>
+          <td> Can Climb:</td>
+          <td>
+            <input type="checkbox" id="canclimb">
+            <tr>
+              <td> Team Color:</td>
+              <td>
+                <select id="color">
+                  <option value="red">Volvo</option>
+                  <option value="blue">Saab</option>
+                  <option value="green">Mercedes</option>
+                  <option value="yellow">Audi</option>
+                </select>
+              </td>
+            </tr>
+  </table>
+  <br>
+  <h3>
+    <b>Notes:</b>
+  </h3>
+  <input type="text" id="notes">
+  <br>
+
+  <button id="done" onclick="sendpage1data()">Ok</button>
+
+</body>
+
+</html>
