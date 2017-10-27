@@ -7,16 +7,17 @@ function save_log_data() {
 
   var request = $.ajax(
     {
-      url: "new_log_save.php",
+      url: "new_log_save.py",
       type: "post",
       data:
-      {
+      JSON.stringify({
         "tnum": teamnum,
         "throw": canthrow,
         "climb": canclimb,
         "color": teamcolor,
         "tnotes": notes
-      },
+      }),
+      dataType: "json",
       error: function (XMLHttpRequest, textStatus, errorThrown) {
         alert("Status: " + textStatus);
         alert("Error: " + errorThrown);
