@@ -7,7 +7,7 @@ function save_log_data() {
 
   var request = $.ajax({
     type: "POST",
-    url: "/cgi_bin/new_log_save.py",
+    url: "new_log_save.py",
     data: JSON.stringify({
       "tnum": teamnum,
       "throw": canthrow,
