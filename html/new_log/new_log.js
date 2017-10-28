@@ -6,17 +6,19 @@ function save_log_data() {
   var notes = $('#notes').val();
 
   var request = $.ajax({
-    type: "POST",
-    url: "new_log_save.py",
+    type: 'post',
+    url: 'new_log_save.py',
     data: JSON.stringify({
-      "tnum": teamnum,
-      "throw": canthrow,
-      "climb": canclimb,
-      "color": teamcolor,
-      "tnotes": notes
+      'team_number': teamnum,
+      'team_color': teamcolor,
+      'can_throw': canthrow,
+      'can_climb': canclimb,
+      'notes': notes
     }),
 
-  }).done(function (o) {
-    console.log(o)
+  }).done(function (output) {
+    if (output.success) {
+      alert('Log successfully saved.')
+    }
   })
 }
