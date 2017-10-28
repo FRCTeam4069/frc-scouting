@@ -1,13 +1,13 @@
 <html>
 
 <head>
-  <script type="text/javascript" src="/frc/common/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/common/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="new_log.js"></script>
 
   <div id="navigation"></div>
 
   <script>
-    $.get("/frc/common/navigation.html", function (data) {
+    $.get("/common/navigation.html", function (data) {
       $("#navigation").replaceWith(data);
     });
   </script>
