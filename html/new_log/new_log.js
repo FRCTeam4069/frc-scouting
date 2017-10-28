@@ -8,7 +8,13 @@ function save_log_data() {
   var request = $.ajax({
     type: "POST",
     url: "/cgi_bin/new_log_save.py",
-    data: { 'param': 'hello' },
+    data: JSON.stringify({
+      "tnum": teamnum,
+      "throw": canthrow,
+      "climb": canclimb,
+      "color": teamcolor,
+      "tnotes": notes
+    }),
 
   }).done(function (o) {
     console.log(o)
