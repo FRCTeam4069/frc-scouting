@@ -15,12 +15,12 @@ First, run the command `sudo a2enmod cgi`. This will enable CGI (Common Gateway 
 
 Next, open `/etc/apache2/apache2.conf` in a text editor. (Use `sudo` to ensure you have editing permissions.) Scroll down until you find the line `<Directory />`. It should be the first in a series of a few HTML-like tags containing permissions for various folders. Between `<Directory />` and the matching `</Directory>` tag, there should be a line that begins with `Options`. Change this line so that the full text is `Options Indexes FollowSymLinks`. Change the next line to `AllowOverride None` and the line after that to `Require all granted`.
 
-Finally, after the last `</Directory>`, create a new tag, replacing `/path/to/frc-scouting/html` with the absolute path to the `html` subfolder in this repository:
+Finally, after the last `</Directory>`, create a new tag, replacing `/path/to/frc-scouting/html` with the absolute path to the `html` subfolder in this repository, and making sure to use single tabs instead of spaces:
 
 ```
 <Directory /path/to/frc-scouting/html>
-    Options +ExecCGI
-    AddHandler cgi-script .py
+	Options +ExecCGI
+	AddHandler cgi-script .py
 </Directory>
 ```
 
