@@ -14,52 +14,48 @@
 </head>
 
 <body>
+  <font face="sans-serif">
+    <h2>
+      Create New Team
+    </h2>
+    <table border=1 style="font-family:sans-serif;">
+      <tr>
+        <td>Team Number</td>
+        <td>
+          <input type="text" id="teamnum">
+        </td>
+      </tr>
+      <tr>
+        <td>Can Throw:</td>
+        <td>
+          <input type="checkbox" id="canthrow">
+          <tr>
+            <td>Can Climb:</td>
+            <td>
+              <input type="checkbox" id="canclimb">
+              <tr>
+                <td>Team Color:</td>
+                <td>
+                  <select id="color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                  </select>
+                </td>
+              </tr>
+    </table>
+    <br>
+    <h3>
+      <b>Notes</b>
+    </h3>
+    <input type="text" id="notes">
+    </br>
+    <br>
+    <button id="done" onclick="save_log_data()">Save Log</button>
+    </br>
 
-  <table border=1>
-    <tr>
-      <td>
-        <center>
-          <h3>
-            <b> Enter New Team </b>
-            </h2>
-        </center>
-      </td>
-    </tr>
-    <tr>
-      <td>Team Number</td>
-      <td>
-        <input type="text" id="teamnum">
-      </td>
-    </tr>
-    <tr>
-      <td>Can Throw:</td>
-      <td>
-        <input type="checkbox" id="canthrow">
-        <tr>
-          <td>Can Climb:</td>
-          <td>
-            <input type="checkbox" id="canclimb">
-            <tr>
-              <td>Team Color:</td>
-              <td>
-                <select id="color">
-                  <option value="red">Red</option>
-                  <option value="blue">Blue</option>
-                  <option value="green">Green</option>
-                  <option value="yellow">Yellow</option>
-                </select>
-              </td>
-            </tr>
-  </table>
-  <br>
-  <h3>
-    <b>Notes:</b>
-  </h3>
-  <input type="text" id="notes">
-  <br>
-
-  <button id="done" onclick="save_log_data()">Ok</button>
-
+  </font>
 </body>
 
 </html>

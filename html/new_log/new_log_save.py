@@ -4,7 +4,7 @@ import os
 import json
 
 # File path of the CSV file to save data entries to
-DATA_PATH = os.path.expanduser('/var/www/frc-scouting/data.csv')
+DATA_PATH = '/var/www/frc-scouting/data.csv'
 
 # Print the output type, followed by a newline
 print('Content-Type: application/json\n')

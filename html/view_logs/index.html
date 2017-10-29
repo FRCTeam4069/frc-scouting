@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="/common/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="view_logs.js"></script>
+
+  <div id="navigation"></div>
+
+  <script>
+    $.get("/common/navigation.html", function (data) {
+      $("#navigation").replaceWith(data);
+    });
+  </script>
+</head>
+
+<body>
+
+  <table border=1 style="font-family:sans-serif;">
+    <tr>
+      <td>
+        Test
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
