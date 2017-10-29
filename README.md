@@ -23,7 +23,7 @@ You can now close and save the file.
 
 ### Create a log folder
 This web app stores log files in the folder `/var/www/frc-scouting`. To create it and allow the web app to save files in it, type the following commands:
-```
+```sh
 cd /var/www
 sudo mkdir frc-scouting
 sudo chmod 777 frc-scouting
