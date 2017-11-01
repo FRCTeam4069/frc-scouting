@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import json
 
-# File path of the CSV file to save data entries to
-DATA_PATH = '/var/www/frc-scouting/data.csv'
-
-# Print the output type, followed by a newline
-print('Content-Type: application/json\n')
+# Load and import a script that handles the boilerplate
+script_directory = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(script_directory + '/..')
+from html.common.python_cgi_setup import DATA_PATH
 
 # Load the data from standard input
 data = input()
