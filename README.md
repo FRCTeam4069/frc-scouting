@@ -2,13 +2,19 @@
 This is an HTML web app for recording and storing data about other teams during FIRST Robotics competitions.
 
 ## Setup
-### Install Apache
-This has been tested on the Apache 2 webserver, running on Ubuntu. To set it up, first install Apache, using `sudo apt install apache2`.
+This has been tested on the Apache 2 webserver, running on macOS and Ubuntu. Instructions for each platform follow.
 
-### Change Apache's `DocumentRoot`
+### macOS
+This has been tested using the Apache installation supplied by Homebrew. It is referred to as `httpd`. For a setup guide, follow this document: https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions. It should provide correct instructions for everything. TODO -- Finish setup instructions
+
+### Ubuntu
+#### Install Apache
+ To set it up, first install Apache, using `sudo apt install apache2`.
+
+#### Change Apache's `DocumentRoot`
 You must then change the folder that Apache serves. Open `/etc/apache/sites-available/000-default.conf` in a text editor and go to the line that begins with `DocumentRoot`. Delete the path following `DocumentRoot` and replace it with the fully qualified path to the `frc-scouting/html` directory in this repository.
 
-### Enable execution of Python code
+#### Enable execution of Python code
 This web app uses Python for the back-end code involved in saving and reading the logs. Apache does not by default permit executing Python code, so we must enable it in Apache's configuration files.
 
 First, run the command `sudo a2enmod cgi`. This will enable CGI (Common Gateway Interface) processing, which is necessary for running almost any non-PHP code on the server.
@@ -26,7 +32,7 @@ Finally, after the last `</Directory>`, create a new tag, replacing `/path/to/fr
 
 You can now close and save the file.
 
-### Create a log folder
+#### Create a log folder
 This web app stores log files in the folder `/var/www/frc-scouting`. To create it and allow the web app to save files in it, type the following commands:
 
 ```sh
@@ -35,7 +41,7 @@ sudo mkdir frc-scouting
 sudo chmod 777 frc-scouting
 ```
 
-### Restart Apache
+#### Restart Apache
 With configuration complete, type the command `sudo service apache2 restart` to restart the Apache web server. Open up your browser and enter `localhost` into the address bar to enter the web app. Everything should work from here!
 
 ### Possible issues
