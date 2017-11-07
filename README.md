@@ -5,7 +5,14 @@ This is an HTML web app for recording and storing data about other teams during 
 This has been tested on the Apache 2 webserver, running on macOS and Ubuntu. Instructions for each platform follow.
 
 ### macOS
-This has been tested using the Apache installation supplied by Homebrew. It is referred to as `httpd`. For a setup guide, follow this document: https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions. It should provide correct instructions for everything. TODO -- Finish setup instructions
+#### Instruction document
+This has been tested using the Apache installation supplied by Homebrew. It is referred to as `httpd`. For a setup guide, follow this document: https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions. It should provide correct instructions for almost everything. You can ignore the PHP-related instructions, but pay attention to all of the setup guidelines for `httpd` itself.
+
+#### Enable CGI
+However, CGI must be enabled. This is not covered. Where in Ubuntu you can execute `sudo a2enmod cgi`, on macOS you must edit `/usr/local/etc/httpd/httpd.conf` and uncomment the line that begins with `LoadModule cgid_module`. Remove the pound sign at the beginning (you may know it as a "hashtag" if you are a member of the great unwashed masses).
+
+#### Create a log folder
+Logs are stored in the folder `~/Developer/frc-scouting`. On my machine, this happens to be where the repository for this web app is saved. If not, create the folder. Assuming you have changed the user that the web app is run as, as documented in the article above, you will not have to do anything special with permissions. It is already running as you, so it has permission to create a log in your home folder.
 
 ### Ubuntu
 #### Install Apache
@@ -33,11 +40,13 @@ Finally, after the last `</Directory>`, create a new tag, replacing `/path/to/fr
 You can now close and save the file.
 
 #### Create a log folder
-This web app stores log files in the folder `/var/www/frc-scouting`. To create it and allow the web app to save files in it, type the following commands:
+This web app stores log files in the folder `~/Developer/frc-scouting`. The home directory is most likely `/var/www`. Assuming this is the case, to create it and allow the web app to save files in it, type the following commands:
 
 ```sh
 cd /var/www
-sudo mkdir frc-scouting
+sudo mkdir Developer
+sudo mkdir Developer/frc-scouting
+cd Developer
 sudo chmod 777 frc-scouting
 ```
 
@@ -47,4 +56,4 @@ With configuration complete, type the command `sudo service apache2 restart` to 
 ### Possible issues
 If this does not work, it is possible that the scripts in this folder are not allowed to be executed. `chmod -R 755 /path/to/frc-scouting/html` should solve this problem.
 
-If other problems are encountered, please open an issue on GitHub and we would be happy to help!
+If other problems are encountered, your best friend is Apache's error log file, located in `/var/log/apache2/error.log` on Ubuntu and `/usr/local/var/log/httpd/error_log` on macOS. If you can't solve the problem, please open an issue on GitHub and we would be happy to help!
