@@ -9,7 +9,7 @@ This has been tested on the Apache 2 webserver, running on macOS and Ubuntu. Ins
 This has been tested using the Apache installation supplied by Homebrew. It is referred to as `httpd`. For a setup guide, follow this document: https://getgrav.org/blog/macos-sierra-apache-multiple-php-versions. It should provide correct instructions for almost everything. You can ignore the PHP-related instructions, but pay attention to all of the setup guidelines for `httpd` itself.
 
 #### Enable CGI
-However, CGI must be enabled. This is not covered. Where in Ubuntu you can execute `sudo a2enmod cgi`, on macOS you must edit `/usr/local/etc/httpd/httpd.conf` and uncomment the line that begins with `LoadModule cgid_module`. Remove the pound sign at the beginning (you may know it as a "hashtag" if you are a member of the great unwashed masses).
+However, CGI must be enabled. This is not covered. Where in Ubuntu you can execute `sudo a2enmod cgi`, on macOS you must edit `/usr/local/etc/httpd/httpd.conf` and uncomment the line that begins with `LoadModule cgid_module`. Remove the pound sign at the beginning of the line.
 
 #### Create a log folder
 Logs are stored in the folder `~/Developer/frc-scouting`. On my machine, this happens to be where the repository for this web app is saved. If not, create the folder. Assuming you have changed the user that the web app is run as, as documented in the article above, you will not have to do anything special with permissions. It is already running as you, so it has permission to create a log in your home folder.
