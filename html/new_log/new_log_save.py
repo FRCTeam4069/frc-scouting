@@ -1,22 +1,23 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import os
 import sys
 import json
 
-# Load and import a script that handles the boilerplate
-script_directory = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(script_directory + '/..')
-from html.common.python_cgi_setup import DATA_PATH
+# File path of the CSV file to save data entries to
+DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.csv')
+
+# Print the JSON output type, followed by a newline
+print('Content-Type: application/json\n')
 
 # Load the data from standard input
-data = input()
+data = raw_input()
 
 # Open the CSV file
 with open(DATA_PATH, 'a') as data_file:
 
     # Append the data string to the file
-    print(data, file=data_file)
+    data_file.write(data + '\n')
 
 # Return a JSON-encoded success message
 success_message = json.dumps({'success': True})

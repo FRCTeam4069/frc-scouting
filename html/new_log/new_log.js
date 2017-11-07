@@ -17,6 +17,7 @@ function save_log_data() {
     }),
 
   }).done(function (output) {
+    console.log(output)
     if (output.success) {
       alert('Log successfully saved.')
     }
