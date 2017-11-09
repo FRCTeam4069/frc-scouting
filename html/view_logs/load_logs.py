@@ -4,35 +4,23 @@ from __future__ import print_function
 
 import os
 import sys
+import json
 
 # File path of the CSV file to save data entries to
-DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.csv')
+DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.out')
+
+# A list describing the elements of the data objects
+DESCRIPTIONS = ["Team number", "Color", "Can throw", "Can climb", "Notes"]
 
 # Print the JSON output type, followed by a newline
 print('Content-Type: application/json\n')
 
-# Load all of the lines from the file
+# Load the lines of the file as JSON objects and add them to a list
 with open(DATA_PATH) as data_file:
-    data_lines = data_file.readlines()
+    line_objects = [json.loads(line) for line in data_file.readlines()]
 
-# Print an open bracket marking the beginning of a JSON list
-print('[')
+# Combine the descriptions and the line objects into JSON object
+output_data = {'descriptions': DESCRIPTIONS, 'objects': line_objects}
 
-# Iterate over each of the data lines
-for i in range(len(data_lines)):
-
-    # If this is not the first element, print a comma to separate the elements of the list
-    if i:
-        print(',')
-
-    # Get the current line
-    line = data_lines[i]
-
-    # Remove whitespace from the beginning and end of the line
-    line = line.strip()
-
-    # Print the line, sending it to the JavaScript calling this script
-    print(line)
-
-# Print a closing bracket to terminate the list
-print(']')
+# Serialize and print the data
+print(json.dumps(output_data))

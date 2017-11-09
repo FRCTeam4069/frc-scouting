@@ -1,10 +1,14 @@
+// A function to collect information from the user interface and send it off
+// to the Python backend to be saved in a data file
 function save_log_data() {
-    var teamnum = $('#teamnum').val();
-    var canthrow = $('#canthrow').is(':checked');
-    var canclimb = $('#canclimb').is(':checked');
-    var teamcolor = $('#color').val();
-    var notes = $('#notes').val();
+    // Get the values from the interface
+    var teamnum = $('#teamnum').val()
+    var canthrow = $('#canthrow').is(':checked')
+    var canclimb = $('#canclimb').is(':checked')
+    var teamcolor = $('#color').val()
+    var notes = $('#notes').val()
 
+    // Send the data in a JSON format to the Python script
     var request = $.ajax({
         type: 'post',
         url: 'new_log_save.py',
@@ -17,6 +21,7 @@ function save_log_data() {
         }),
 
     }).done(function (output) {
+        // Notify the user when complete
         if (output.success) {
             alert('Log successfully saved.')
         }

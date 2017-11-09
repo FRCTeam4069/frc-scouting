@@ -7,7 +7,7 @@ import sys
 import json
 
 # File path of the CSV file to save data entries to
-DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.csv')
+DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.out')
 
 # Print the JSON output type, followed by a newline
 print('Content-Type: application/json\n')
