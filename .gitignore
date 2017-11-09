@@ -1,4 +1,5 @@
 # Log files
+*.csv
 *.out
 
 # Editor files
