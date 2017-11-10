@@ -23,32 +23,39 @@ function load_log_data() {
             cell.innerHTML = title
         }
 
-        // Get the list of objects from the JSON
-        objects = output.objects
+        // Add objects only if reading the file succeeded
+        if (output.success) {
+            // Get the list of objects from the JSON
+            objects = output.objects
 
-        // Iterate over the list of objects
-        for (var i in objects) {
-            // Get the current object
-            var object = objects[i]
+            // Iterate over the list of objects
+            for (var i in objects) {
+                // Get the current object
+                var object = objects[i]
 
-            // Put the elements from the object into a list
-            elements = [
-                object.team_number,
-                object.team_color,
-                object.can_throw,
-                object.can_climb,
-                object.notes
-            ]
+                // Put the elements from the object into a list
+                elements = [
+                    object.team_number,
+                    object.team_color,
+                    object.can_throw,
+                    object.can_climb,
+                    object.notes
+                ]
 
-            // Create a new row in the table
-            var row = table.insertRow()
+                // Create a new row in the table
+                var row = table.insertRow()
 
-            // Iterate over the elements
-            for (var j in elements) {
-                // Insert a cell and display the current value in it
-                var cell = row.insertCell()
-                cell.innerHTML = elements[j]
+                // Iterate over the elements
+                for (var j in elements) {
+                    // Insert a cell and display the current value in it
+                    var cell = row.insertCell()
+                    cell.innerHTML = elements[j]
+                }
             }
+        } else {
+            // If it failed, add a row containing a notification that there was no data
+            var messageRow = table.insertRow()
+            messageRow.innerHTML = 'No logs were found'
         }
     })
 }
