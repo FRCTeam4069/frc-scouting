@@ -35,6 +35,6 @@ tr:nth-child(even) {
 }
 
 /* Text fields should fill their entire space */
-input {
+input, textarea {
     width: 100%;
 }

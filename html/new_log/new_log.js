@@ -21,9 +21,9 @@ function save_log_data() {
         }),
 
     }).done(function (output) {
-        // Notify the user when complete
+        // Reload the page when complete
         if (output.success) {
-            alert('Log successfully saved.')
+            location.reload();
         }
     })
 }
