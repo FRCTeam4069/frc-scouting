@@ -1,0 +1,20 @@
+/* Set the fonts and padding for the entirety of the pages except the top navigation bar */
+div#main {
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+/* Collapse table borders into a single border */
+table {
+    border-collapse: collapse;
+}
+
+/* Use a moderately thick black line for tables */
+table, th, td {
+    border: 1px solid black;
+}
+
+/* Use a very light gray background in every other table row */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
