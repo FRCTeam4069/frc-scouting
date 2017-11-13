@@ -14,6 +14,23 @@ table, th, td {
     border: 1px solid black;
 }
 
+/* Add padding between table elements and the table */
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+/* Make the first row of a table a different color */
+tr:first-child {
+    color: white;
+    background-color: #4f0078;
+}
+
+/* Set a minimum width for table columns */
+td {
+    width: 150px;
+}
+
 /* Use a very light gray background in every other table row */
 tr:nth-child(even) {
     background-color: #f2f2f2;
