@@ -40,4 +40,3 @@ except (IOError, ValueError):
 
 # Serialize and print the data
 print(json.dumps(output_data))
-raise IOError(json.dumps(output_data))
