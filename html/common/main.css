@@ -1,7 +1,7 @@
 /* Set the fonts and padding for the entirety of the pages except the top navigation bar */
 div#main {
     padding: 10px;
-    font-family: sans-serif;
+    font-family: "Verdana", sans-serif;
     width: 90%;
     margin: auto;
 }
