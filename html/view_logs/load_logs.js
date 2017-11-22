@@ -36,8 +36,8 @@ function load_log_data() {
                 // Put the elements from the object into a list
                 elements = [
                     object.team_number,
+                    object.balls_thrown,
                     object.team_color,
-                    object.can_throw,
                     object.can_climb,
                     object.notes
                 ]

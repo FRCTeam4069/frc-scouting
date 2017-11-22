@@ -3,6 +3,7 @@
 <head>
     <script type="text/javascript" src="/common/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="new_log.js"></script>
+    <script type="text/javascript" src="increment_number_label.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/common/main.css">
 
@@ -28,22 +29,24 @@
                     Team Number
                 </td>
                 <td>
-                    <input type="number">
+                    <input type='number' id='teamNumber'>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Can Throw
+                    Balls Thrown
                 </td>
                 <td>
-                    <input type="checkbox" id="canthrow">
+                    <label id="ballsThrown">0</label>
+                    <button onclick="incrementNumericLabel('ballsThrown', 1)">+</button>
+                    <button onclick="incrementNumericLabel('ballsThrown', -1)">-</button>
                 </td>
                 <tr>
                     <td>
                         Can Climb
                     </td>
                     <td>
-                        <input type="checkbox" id="canclimb">
+                        <input type="checkbox" id="canClimb">
                     </td>
                 </tr>
                 <tr>
@@ -69,7 +72,7 @@
         <textarea id="notes" rows=5></textarea>
         </br>
         <br>
-        <button id="done" onclick="save_log_data()">Save Log</button>
+        <button onclick="save_log_data()">Save Log</button>
         </br>
     </div>
 </body>
