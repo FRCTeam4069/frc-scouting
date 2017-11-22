@@ -2,8 +2,8 @@
 
 <head>
     <script type="text/javascript" src="/common/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="new_log.js"></script>
-    <script type="text/javascript" src="increment_number_label.js"></script>
+    <script type="text/javascript" src="saveLogData.js"></script>
+    <script type="text/javascript" src="incrementNumericLabel.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/common/main.css">
 
@@ -29,7 +29,7 @@
                     Team Number
                 </td>
                 <td>
-                    <input type='number' id='teamNumber'>
+                    <input type='number' id='team-number'>
                 </td>
             </tr>
             <tr>
@@ -37,16 +37,16 @@
                     Balls Thrown
                 </td>
                 <td>
-                    <label id="ballsThrown">0</label>
-                    <button onclick="incrementNumericLabel('ballsThrown', 1)">+</button>
-                    <button onclick="incrementNumericLabel('ballsThrown', -1)">-</button>
+                    <label id="balls-thrown">0</label>
+                    <button onclick="incrementNumericLabel('balls-thrown', 1)">+</button>
+                    <button onclick="incrementNumericLabel('balls-thrown', -1)">-</button>
                 </td>
                 <tr>
                     <td>
                         Can Climb
                     </td>
                     <td>
-                        <input type="checkbox" id="canClimb">
+                        <input type="checkbox" id="can-climb">
                     </td>
                 </tr>
                 <tr>
@@ -54,7 +54,7 @@
                         Team Color
                     </td>
                     <td>
-                        <select id="color">
+                        <select id="team-color">
                             <option value="red">Red</option>
                             <option value="blue">Blue</option>
                             <option value="green">Green</option>
@@ -72,7 +72,7 @@
         <textarea id="notes" rows=5></textarea>
         </br>
         <br>
-        <button onclick="save_log_data()">Save Log</button>
+        <button onclick="saveLogData()">Save Log</button>
         </br>
     </div>
 </body>

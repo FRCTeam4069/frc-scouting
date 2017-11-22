@@ -10,7 +10,7 @@ import json
 DATA_PATH = os.path.expanduser('~/Developer/frc-scouting/data.out')
 
 # A list describing the elements of the data objects
-DESCRIPTIONS = ["Team number", "Balls thrown", "Color", "Can climb", "Notes"]
+DESCRIPTIONS = ["Team number", "Balls thrown", "Team color", "Can climb", "Notes"]
 
 # Create a dictionary for output holding the descriptions, which will be added to later
 output_data = {'descriptions': DESCRIPTIONS}

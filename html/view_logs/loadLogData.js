@@ -1,13 +1,13 @@
 // A function to display the data loaded from the Python backend in a table
-function load_log_data() {
+function loadLogData() {
     // Call the backend script and load the data in a JSON list format
     var request = $.ajax({
         type: 'post',
-        url: 'load_logs.py'
+        url: 'load_log_data.py'
 
     }).done(function (output) {
         // Get the table on the HTML page
-        var table = document.getElementById('data_table')
+        var table = document.getElementById('data-table')
 
         // Get the descriptions from the larger JSON object
         descriptions = output.descriptions
@@ -35,10 +35,10 @@ function load_log_data() {
 
                 // Put the elements from the object into a list
                 elements = [
-                    object.team_number,
-                    object.balls_thrown,
-                    object.team_color,
-                    object.can_climb,
+                    object.teamNumber,
+                    object.ballsThrown,
+                    object.teamColor,
+                    object.canClimb,
                     object.notes
                 ]
 
